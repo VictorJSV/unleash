@@ -107,11 +107,29 @@
     "*.js": [
       "eslint --fix",
       "git add"
+    ],
+    "*.{json,html,css,yaml,yml,md}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "prettier": {
+    "proseWrap": "never",
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "overrides": [
+      {
+        "files": "*.{json,yaml,yml,md}",
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ]
   }
 }
